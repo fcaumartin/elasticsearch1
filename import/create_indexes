@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -o xtrace
+
+curl -X DELETE http://localhost:9200/user
+curl -X PUT http://localhost:9200/user --header "Content-Type: application/json" -d @index_user.json
+
+curl -X DELETE http://localhost:9200/tweet
+curl -X PUT http://localhost:9200/tweet --header "Content-Type: application/json" -d @index_tweet.json
+
